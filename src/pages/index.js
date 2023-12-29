@@ -47,7 +47,7 @@ export default function Home() {
     <main className="grid sm:container min-h-screen p-8 sm:gap-10 sm:p-12  dark:bg-gray-900">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-semibold text-gray-900 dark:text-gray-100">
-          Jammmer
+          RiftSync
         </h1>
         <Button onClick={savePlaylist} className="self-start">
           Save to Spotify

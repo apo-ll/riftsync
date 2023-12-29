@@ -1,5 +1,6 @@
 
 import { useCallback } from 'react'
+import Image from 'next/image'
 
 import {
   CardTitle,
@@ -42,6 +43,10 @@ const Track = ({ tracks, onAdd, onRemove, isRemoval }) => {
 
   return (
     <Card>
+      <div className='justify-center flex sm:pt-6 pt-4'>
+        <Image src={tracks.coverImage} alt={`Album image of ${tracks.artist}`} className='aspect-square rounded-lg justify-center' height={300} width={300} />
+      </div>
+      
       <CardHeader className="pb-4">
         <CardTitle className="text-lg font-medium text-gray-900 dark:text-gray-100">
           {tracks.name}
