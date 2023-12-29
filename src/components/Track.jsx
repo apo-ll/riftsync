@@ -1,6 +1,7 @@
 
 import { useCallback } from 'react'
 import Image from 'next/image'
+import { toast } from 'sonner'
 
 import {
   CardTitle,
@@ -29,13 +30,14 @@ const Track = ({ tracks, onAdd, onRemove, isRemoval }) => {
   const renderAction = () => {
     if (isRemoval) {
       return (
-        <Button size="sm" variant="outline" onClick={removeTrack}>
+        <Button size="sm" variant="outline" onClick={() => {removeTrack(); toast.success(`${tracks.name} by ${tracks.artist} has been removed from playlist`)}}>
           Remove From Playlist
         </Button>
       )
     }
     return (
-      <Button size="sm" variant="outline" onClick={addTrack}>
+      <Button size="sm" variant="outline" onClick={() => {addTrack(); toast.success(`${tracks.name} by ${tracks.artist} has been added to playlist`)}} >
+        
         Add To Playlist
       </Button>
     )
@@ -55,7 +57,8 @@ const Track = ({ tracks, onAdd, onRemove, isRemoval }) => {
           {tracks.artist}, {tracks.album}
         </CardDescription>
       </CardHeader>
-      <CardContent className="flex justify-end">{renderAction()}</CardContent>
+      <CardContent className="flex justify-end">
+        {renderAction()}</CardContent>
     </Card>
   )
 }
