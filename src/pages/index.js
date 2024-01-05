@@ -44,8 +44,8 @@ export default function Home() {
   }, [playlistName, playlistTracks])
 
   return (
-    <main className="grid sm:container min-h-screen p-8 sm:gap-10 sm:p-12  dark:bg-gray-900">
-      <div className="flex justify-between items-center">
+    <>
+    <div className="flex justify-between items-center container pt-9">
         <h1 className="text-3xl font-semibold text-gray-900 dark:text-gray-100">
           RiftSync
         </h1>
@@ -53,6 +53,8 @@ export default function Home() {
           Save to Spotify
         </Button>
       </div>
+    <main className="grid sm:container min-h-screen p-8 sm:gap-10 sm:p-12  dark:bg-gray-900">
+      
       <SearchBar onSearch={search} />
       <SearchResult
         searchResults={searchResults}
@@ -66,5 +68,6 @@ export default function Home() {
         playlistName={playlistName}
       />
     </main>
+    </>
   )
 }
